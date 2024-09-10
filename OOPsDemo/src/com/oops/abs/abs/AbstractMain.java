@@ -1,4 +1,4 @@
-package com.oops.abs;
+package com.oops.abs.abs;
 
 public class AbstractMain {
 

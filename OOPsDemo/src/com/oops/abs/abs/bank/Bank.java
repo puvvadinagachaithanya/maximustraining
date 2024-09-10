@@ -1,4 +1,4 @@
-package com.oops.abs.bank;
+package com.oops.abs.abs.bank;
 
 public abstract class Bank {
     abstract void carLoan();

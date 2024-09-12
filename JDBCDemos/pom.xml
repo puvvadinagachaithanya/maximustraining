@@ -4,6 +4,10 @@
   <artifactId>JDBCDemos</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+  <properties>
+  <maven.compiler.source>17</maven.compiler.source>
+  <maven.compiler.target>17</maven.compiler.target>
+  </properties>
 <dependencies>
 <dependency>
     <groupId>mysql</groupId>

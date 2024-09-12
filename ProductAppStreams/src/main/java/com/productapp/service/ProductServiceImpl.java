@@ -45,7 +45,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public Product getById(int productId) throws ProductNotFoundException {
 		Product product = ProductUtil.showProducts().stream().filter(prod -> prod.getProductId() == productId).findAny()
-				.orElseThrow();
+				.orElseThrow(() -> new ProductNotFoundException("Product Not Found For Provided Id :" + productId));
 
 		return product;
 	}

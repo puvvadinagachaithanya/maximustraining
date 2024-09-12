@@ -35,7 +35,7 @@ public class ProductServiceImpl implements IProductService {
 	@Override
 	public List<String> getProductNames(String brand) throws ProductNotFoundException {
 		List<String> productNameList = ProductUtil.showProducts().stream().filter(prod -> prod.getBrand().equals(brand))
-				.map(prod -> prod.getProductName()).toList();
+				.map(Product::getProductName).toList();
 		if (!productNameList.isEmpty()) {
 			return productNameList;
 		}
@@ -43,13 +43,11 @@ public class ProductServiceImpl implements IProductService {
 	}
 
 	@Override
-	public Optional<Product> getById(int productId) throws ProductNotFoundException {
-		Optional<Product> product = ProductUtil.showProducts().stream()
-				.filter(prod -> prod.getProductId().equals(productId)).findAny();
-		if (product.isPresent()) {
-			return product;
-		}
-		throw new ProductNotFoundException("Product Not Found For Provided Product Id :" + productId);
+	public Product getById(int productId) throws ProductNotFoundException {
+		Product product = ProductUtil.showProducts().stream().filter(prod -> prod.getProductId() == productId).findAny()
+				.orElseThrow();
+
+		return product;
 	}
 
 	@Override

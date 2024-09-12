@@ -37,36 +37,17 @@ public class Client {
 
 			products = service.getByDateBefore("Titan", LocalDate.now());
 			products.forEach(System.out::println);
-			
+
 			System.out.println();
-			
-			Optional<Product> product = service.getById(1);
-			System.out.println(product.get());
+
+			Product product = service.getById(10);
+			System.out.println(product);
 
 		} catch (ProductNotFoundException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
-
-//		Product product = service.getById(1);
-//		if(product != null) {
-//			System.out.println(product);
-//		}
-//		else {
-//			System.out.println("No Product Found");
-//		}
-
-//		String[] productNames = service.getCategories("TV");
-//		for (String productName : productNames) {
-//			if (productName != null)
-//				System.out.println(productName);
-//		}
-
-//		for (Product product : productsWithExpiryDate) {
-//			if(product !=null)
-//				System.out.println(product);
-//		}
 
 	}
 

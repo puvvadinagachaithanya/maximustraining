@@ -16,7 +16,7 @@ public interface IProductService {
 
 	List<String> getProductNames(String brand) throws ProductNotFoundException;
 
-	Optional<Product> getById(int productId) throws ProductNotFoundException;
+	Product getById(int productId) throws ProductNotFoundException;
 
 	List<String> getCategories(String productName) throws ProductNotFoundException;
 	
